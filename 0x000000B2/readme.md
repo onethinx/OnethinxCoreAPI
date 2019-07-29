@@ -195,7 +195,11 @@ sleepConfig_t sleepConfig = {
 `wakeUpDelay(days, hours, minutes, seconds)` adds all four parameters
 
 eg. a delay of 12 days, 4 hours, 3 minutes and 0 seconds can be created in multiple ways:
+
 `wakeUpDelay(12, 4, 3, 0)`, or
+
 `wakeUpDelay(12, 4, 0, 180)`, or
+
 `wakeUpDelay(11, 26, 120, 180)`,
+
 as long as each parameter fits in 8 bits (< 256)
