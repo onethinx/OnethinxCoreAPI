@@ -6,9 +6,11 @@ The addition of the configuration of two sub-bands ( `.Join.SubBand_1st` and `.J
 This configuration is to accommodate the LoRaWAN US specifications and reduce joining time, and NEEDS to be configured for all versions since 0x000000B0.
 
 ### EU configuration
-For LoRaWAN EU region, a total of 16 channels are possible where the sub-band 1 represents channels 0-7 and sub-band 2 represents channels 8-15. The default configuration is:
-- subband 1 enabled
-- subband 2 disabled
+For LoRaWAN EU region, a total of 16 channels are possible where the sub-band 1 represents channels 0-7 and sub-band 2 represents channels 8-15. 
+
+The default configuration is:
+- sub-band 1 enabled
+- sub-band 2 disabled
 
 EU configuration example:
 ```
