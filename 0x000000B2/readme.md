@@ -1,5 +1,16 @@
 ## Usage of the new 0x000000B2 API
 
+The device now contains a Device EUI which can be read out with the new API call `LoRaWAN_GetInfo`
+
+It can be used in the ket structure as follows:
+LoRaWAN_keys_t someKeys = {
+	.KeyType 						= OTAA_10x_key,
+	.PublicNetwork					= true,
+	.OTAA_10x.DevEui				= thisDevEUI, 
+	.OTAA_10x.AppEui				= { 0xC0, 0x01, 0xCA, 0xFE, 0xBA, 0xBE, 0xC0, 0xDE },
+	.OTAA_10x.AppKey				= { 0xBA, 0xDD, 0xBE, 0xEF, 0xC0, 0x01, 0xBA, 0xBE, 0xC0, 0x01, 0xFE, 0xED, 0xF0, 0x0D, 0xC0, 0xDE } 
+};
+
 The following API functionality has changed since version 0x000000B0:
 
 The addition of the configuration of two sub-bands ( `.Join.SubBand_1st` and `.Join.SubBand_2nd` ). 
