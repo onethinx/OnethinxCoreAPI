@@ -78,6 +78,17 @@ stackStage		Core firmware lifecycle stage: 'a' pre-alpha, 'A' Alpha, 'b' perputu
 codeName[16]		Core firmware code name
 ```
 
+In order to make debugging on the CM4 core more convinient in sleep mode the following optinons are added to the SleepConfog.sleepMode member:
+```
+.sleepmode:
+	modeSleep
+	modeDeepSleep
+	modeHibernate
+	modeSleepDebugOn	/**< Keeping debug active consumes extra power, use only for debugging purposes */
+	modeDeepSleepDebugOn	/**< Keeping debug active consumes extra power, use only for debugging purposes */
+	modeHibernateDebugOn	/**< Keeping debug active consumes extra power, use only for debugging purposes */	
+```
+
 #### The following API calls are added since version 0x000000B1:
 ```
 coreStatus_t	LoRaWAN_Reset();
