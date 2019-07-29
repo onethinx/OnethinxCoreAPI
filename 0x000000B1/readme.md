@@ -50,6 +50,8 @@ coreConfiguration_t coreConfig = {
 };
 ```
 
+## API updates
+
 The following API calls are added since version 0x000000B1:
 ```
 coreStatus_t	LoRaWAN_Reset();
