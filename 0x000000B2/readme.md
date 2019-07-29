@@ -63,7 +63,7 @@ coreStatus_t	LoRaWAN_GetInfo(coreInfo_t * coreInfo);
 ```
 Returns the device info:
 ```
-buildYear:		Core firmware Year of build
+buildYear		Core firmware Year of build
 buildMonth		Core firmware Month of build
 buildDayOfMonth		Core firmware Day of build
 buildHour		Core firmware Hour of build (24h mode)
@@ -74,7 +74,7 @@ devEUI[8]		Core devEUI
 buildType		Core firmware build type
 stackRegion		Core firmware stack region
 stackOption		Core firmware stack option: 'S'ecure, 'P'SA, 'C'onfigurable
-stackStage;		Core firmware lifecycle stage: 'a' pre-alpha, 'A' Alpha, 'b' perputual beta, 'B' Beta, 'r' release candidate, 'R' Release
+stackStage		Core firmware lifecycle stage: 'a' pre-alpha, 'A' Alpha, 'b' perputual beta, 'B' Beta, 'r' release candidate, 'R' Release
 codeName[16]		Core firmware code name
 ```
 
