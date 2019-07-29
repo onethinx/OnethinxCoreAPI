@@ -1,4 +1,4 @@
-## Usage of the new 0x000000B2 API
+## Usage of the new 0x000000B1 API
 
 The following API functionality has changed since version 0x000000B0:
 
