@@ -360,8 +360,8 @@ typedef struct  __attribute__ ((__packed__))
 } sleepConfig_t;
 
 
-#define 	wakeUpPinHigh(pullDown)							((wakeUpPin_t) { .enabled = true, .risingEdge = true, internalPullUpDown =  pullDown})
-#define 	wakeUpPinLow(pullUp) 							((wakeUpPin_t) { .enabled = true, .risingEdge = true, internalPullUpDown =  pullUp})
+#define 	wakeUpPinHigh(pullDown)							((wakeUpPin_t) { .enabled = true, .risingEdge = true, .internalPullUpDown =  pullDown})
+#define 	wakeUpPinLow(pullUp) 							((wakeUpPin_t) { .enabled = true, .risingEdge = false, .internalPullUpDown =  pullUp})
 #define 	wakeUpPinOff      								((wakeUpPin_t) { .enabled = false })
 #define 	wakeUpTimeOff				     				((wakeUpTime_t) { .enabled = false })
 #define 	wakeUpTimestamp(_timestamp)     				((wakeUpTime_t) { .enabled = true, .isTimestamp = true, .timestamp = _timestamp })
