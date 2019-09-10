@@ -78,17 +78,18 @@ void CM4_ReleaseCallback(void)
 
 coreStatus_t coreComm(coreFunctions_e function, bool waitTillFinished)
 {
+	systemErrors_e systemError;
 	cy_en_ipc_pipe_status_t pipeStatus;
 	coreArguments.function = function;
-	if (coreArguments.status.system.isBusy)
-		coreArguments.status.system.errorStatus = system_BusyError;
+	if (coreArguments.status.system.isBusy) systemError = system_BusyError;
 	else {
 		coreArguments.status.system.isBusy = true;
 		callBackDone = 0;
 		pipeStatus = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM0_ADDR, CY_IPC_EP_CYPIPE_CM4_ADDR, (void *) &ipcMsgs.forCM0, CM4_ReleaseCallback);
-		if (pipeStatus != CY_IPC_PIPE_SUCCESS) coreArguments.status.system.errorStatus = system_IPCError;
+		if (pipeStatus != CY_IPC_PIPE_SUCCESS) systemError = system_IPCError;
 		else if (waitTillFinished) while (coreArguments.status.system.isBusy);
 	}
+	if (systemError != system_OK) coreArguments.status.system.errorStatus = systemError;
 	return coreArguments.status;
 }
 
@@ -162,6 +163,7 @@ coreStatus_t LoRaWAN_Sleep(sleepConfig_t * sleepConfig)
 {																						// Debugging will halt here as SWD pins are put in High-Z mode
 	coreArguments.arg1 = (uint32_t) sleepConfig;
 	coreComm(coreFunction_LW_sleep, false);
+	if (coreArguments.status.system.errorStatus != system_OK) return coreArguments.status;
 	if ((sleepConfig->sleepMode & 7) == modeHibernate)	
 		while(1);																		// CM0+ will put system in hibernate and system will restart with a reset
  	while (!callBackDone);
@@ -190,8 +192,7 @@ coreStatus_t LoRaWAN_FlashWrite(uint8_t* buffer, uint8_t block, uint8_t length)
 	coreArguments.arg1 = (uint32_t) buffer;
 	coreArguments.arg2 = block;
 	coreArguments.arg3 = length;
-	coreComm(coreFunction_LW_flashWrite, true);
-	return coreArguments.status;
+	return coreComm(coreFunction_LW_flashWrite, true);
 }
 
 /* [] END OF FILE */
