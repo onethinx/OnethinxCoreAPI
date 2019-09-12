@@ -1,31 +1,57 @@
-/* ==========================================================
+/********************************************************************************
  *    ___             _   _     _			
  *   / _ \ _ __   ___| |_| |__ (_)_ __ __  __
  *  | | | | '_ \ / _ \ __| '_ \| | '_ \\ \/ /
  *  | |_| | | | |  __/ |_| | | | | | | |>  < 
  *   \___/|_| |_|\___|\__|_| |_|_|_| |_/_/\_\
- *									   
- * Copyright Onethinx, 2018
- * All Rights Reserved
  *
- * UNPUBLISHED, LICENSED SOFTWARE.
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF Onethinx BV
+ ********************************************************************************
  *
- * ==========================================================
+ * Copyright (c) 2019 Onethinx BV <info@onethinx.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ ********************************************************************************
+ *
+ * Created by: Rolf Nooteboom
+ *
+ * Library to use with the Onethinx Core LoRaWAN module.
+ * 
+ * For a description please see:
+ * https://github.com/onethinx/OnethinxCoreAPI
+ *
+ ********************************************************************************
+ *
  * Core revisions:
- * 0x000000AA	Wrong devaddr in onethinx_core.h and wrong byte amount reserved
+ * 0x000000AA	Fix DevAddr in OnethinxCore01.h and reserved byte amount fixed
  * 0x000000AB	Implemented M0+ reset: failed debugging
  * 0x000000AC	Implemented breakCurrentFunction
  * 0x000000AD	Added configurations pointer validity check
  * 0x000000AE	Transmit power issue solved (device was always sending at TX_MAX)
- * 0x000000B0	Added US subbands, enhanced RX1 + RX2 window accuracy, fixed CM0p SRAM memory mapping, 
- * 0x000000B1	Added LP functionality and added FlashWrites
+ * 0x000000B0	Added US sub-bands, enhanced RX1 + RX2 window accuracy, fixed CM0p SRAM memory mapping, 
+ * 0x000000B1	Added LP functionality, added FlashWrites, added possibility to read Dev Address
  *
  * Known Issues:
- *   Confirmed downlink message doesn't get confimation from device
+ *   Confirmed downlink message doesn't get confirmation from device
  *   ADR not working yet
- */
+ *
+ ********************************************************************************/
 
 #ifndef ONETHINXCORE01_H
 #define ONETHINXCORE01_H	
