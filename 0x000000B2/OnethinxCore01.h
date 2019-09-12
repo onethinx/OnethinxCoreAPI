@@ -1,32 +1,57 @@
-/* ==========================================================
+/********************************************************************************
  *    ___             _   _     _			
  *   / _ \ _ __   ___| |_| |__ (_)_ __ __  __
  *  | | | | '_ \ / _ \ __| '_ \| | '_ \\ \/ /
  *  | |_| | | | |  __/ |_| | | | | | | |>  < 
  *   \___/|_| |_|\___|\__|_| |_|_|_| |_/_/\_\
- *									   
- * Copyright Onethinx, 2018-2019
- * All Rights Reserved
  *
- * UNPUBLISHED, LICENSED SOFTWARE.
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF Onethinx BV
+ ********************************************************************************
  *
- * ==========================================================
+ * Copyright (c) 2019 Onethinx BV <info@onethinx.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ ********************************************************************************
+ *
+ * Created by: Rolf Nooteboom
+ *
+ * Library to use with the Onethinx Core LoRaWAN module.
+ * 
+ * For a description please see:
+ * https://github.com/onethinx/OnethinxCoreAPI
+ *
+ ********************************************************************************/
+ *
  * Core revisions:
- * 0x000000AA	Wrong devaddr in onethinx_core.h and wrong byte amount reserved
+ * 0x000000AA	Fix DevAddr in OnethinxCore01.h and reserved byte amount fixed
  * 0x000000AB	Implemented M0+ reset: failed debugging
  * 0x000000AC	Implemented breakCurrentFunction
  * 0x000000AD	Added configurations pointer validity check
  * 0x000000AE	Transmit power issue solved (device was always sending at TX_MAX)
- * 0x000000B0	Added US subbands, enhanced RX1 + RX2 window accuracy, fixed CM0p SRAM memory mapping, 
+ * 0x000000B0	Added US sub-bands, enhanced RX1 + RX2 window accuracy, fixed CM0p SRAM memory mapping, 
  * 0x000000B1	Added LP functionality, added FlashWrites, added possibility to read Dev Address
- * 0x000000B2	Cleared RX-timeout flag if no downlink repsonse is expexted, Added DevEUI & build info, Fixed high power consumption glitches at wakeup, Added LowPowerDebug, Improved active-power consumption
+ * 0x000000B2	Cleared RX-timeout flag if no downlink response is expected, added DevEUI & build info, fixed high power consumption glitches at wakeup, Added LowPowerDebug, Improved active-power consumption
  * 0x000000B3	Fix Join accept on SF12 in RX1 window
  * 0x000000B4	Fix WakeUp pin in Sleepmode, FlashRead fix for row !=0
  *
  * Known Issues:
- *   Confirmed downlink message doesn't get confimation from device
+ *   Confirmed downlink message doesn't get confirmation from device
  *   ADR not working yet
  */
 
@@ -43,7 +68,7 @@
 typedef struct arr8b_t  { uint8_t bytes[8];  } arr8b_t;
 typedef struct arr16b_t { uint8_t bytes[16]; } arr16b_t;
 
-/* Do not modify. If code { 0, 0, 0, 0, 0, 0, 0, 0 } is recognised, it is replaced with manufacturing DevEUI. This manufacturing DevEUI can be requested using LoRaWAN_GetInfo */
+/* Do not modify. If code { 0, 0, 0, 0, 0, 0, 0, 0 } is recognized, it is replaced with manufacturing DevEUI. This manufacturing DevEUI can be requested using LoRaWAN_GetInfo */
 #define thisDevEUI	{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }
 
 typedef enum {
@@ -403,7 +428,7 @@ typedef struct  __attribute__ ((__packed__))
 	char			buildType;								/**< core firmware build type */
 	stackRegion_e 	stackRegion				:8;				/**< core firmware stack region */
 	char		 	stackOption;							/**< core firmware stack option: 'S'ecure, 'P'SA, 'C'onfigurable */
-	char			stackStage;								/**< core firmware lifecycle stage: 'a' pre-alpha, 'A' Alpha, 'b' perputual beta, 'B' Beta, 'r' release candidate, 'R' Release */
+	char			stackStage;								/**< core firmware lifecycle stage: 'a' pre-alpha, 'A' Alpha, 'b' perpetual beta, 'B' Beta, 'r' release candidate, 'R' Release */
 	char			codeName[16];							/**< core firmware code name */
 } coreInfo_t;
 
