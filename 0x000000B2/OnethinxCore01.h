@@ -53,7 +53,7 @@
  * Known Issues:
  *   Confirmed downlink message doesn't get confirmation from device
  *   ADR not working yet
- */
+ *//
 
 #ifndef ONETHINXCORE01_H
 #define ONETHINXCORE01_H	
