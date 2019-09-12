@@ -4,18 +4,18 @@
 
 The following table indicates which API version to use:
 
-| Stack version | API version | Where to find |
-|---------------|-------------|---------------|
-| 0x000000AA    | 0x000000AA  | not public
-| 0x000000AB    | 0x000000AA  |
-| 0x000000AC    | 0x000000AA  |
-| 0x000000AD    | 0x000000AA  |
-| 0x000000AE    | 0x000000AA  |
-| 0x000000B0    | 0x000000B0  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B0
-| 0x000000B1    | 0x000000B1  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B1
-| 0x000000B2    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2
-| 0x000000B3    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2
-| 0x000000B4    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2
+| Stack version | API version | Where to find                                              |
+|---------------|-------------|------------------------------------------------------------|
+| 0x000000AA    | 0x000000AA  | not public                                                 |
+| 0x000000AB    | 0x000000AA  | not public                                                 |
+| 0x000000AC    | 0x000000AA  | not public                                                 |
+| 0x000000AD    | 0x000000AD  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000AD |
+| 0x000000AE    | 0x000000AD  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000AD |
+| 0x000000B0    | 0x000000B0  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B0 |
+| 0x000000B1    | 0x000000B1  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B1 |
+| 0x000000B2    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2 |
+| 0x000000B3    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2 |
+| 0x000000B4    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2 |
 
 
 ### How to get the stack version of your module:
