@@ -22,6 +22,8 @@
  * 0x000000B0	Added US subbands, enhanced RX1 + RX2 window accuracy, fixed CM0p SRAM memory mapping, 
  * 0x000000B1	Added LP functionality, added FlashWrites, added possibility to read Dev Address
  * 0x000000B2	Cleared RX-timeout flag if no downlink repsonse is expexted, Added DevEUI & build info, Fixed high power consumption glitches at wakeup, Added LowPowerDebug, Improved active-power consumption
+ * 0x000000B3	Fix Join accept on SF12 in RX1 window
+ * 0x000000B4	Fix WakeUp pin in Sleepmode, FlashRead fix for row !=0
  *
  * Known Issues:
  *   Confirmed downlink message doesn't get confimation from device
@@ -36,7 +38,7 @@
 
 /* Do not modify. If stack version does not match, implement correct OnethinxCore.h & .c API drivers */
 #define minimumVersion 	0x000000B2
-#define maximumVersion 	0x000000B3
+#define maximumVersion 	0x000000B4
 
 typedef struct arr8b_t  { uint8_t bytes[8];  } arr8b_t;
 typedef struct arr16b_t { uint8_t bytes[16]; } arr16b_t;
