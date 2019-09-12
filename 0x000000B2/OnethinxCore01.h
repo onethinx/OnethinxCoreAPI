@@ -36,7 +36,7 @@
  * For a description please see:
  * https://github.com/onethinx/OnethinxCoreAPI
  *
- ********************************************************************************/
+ ********************************************************************************
  *
  * Core revisions:
  * 0x000000AA	Fix DevAddr in OnethinxCore01.h and reserved byte amount fixed
