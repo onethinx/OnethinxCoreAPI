@@ -28,7 +28,7 @@ The default configuration is:
 EU configuration example:
 ```
 coreConfiguration_t coreConfig = {
-	.Join.KeysPtr =			&SomeOTAAkeys,
+	.Join.KeysPtr =			&TTN_OTAAkeys,
 	.Join.DataRate =		DR_AUTO,
 	.Join.Power =			PWR_MAX,
 	.Join.MAXTries =		100,
@@ -50,7 +50,7 @@ US configuration example:
 
 ```
 coreConfiguration_t coreConfig = {
-	.Join.KeysPtr =			&SomeOTAAkeys,
+	.Join.KeysPtr =			&TTN_OTAAkeys,
 	.Join.DataRate =		DR_AUTO,
 	.Join.Power =			PWR_MAX,
 	.Join.MAXTries =		100,
