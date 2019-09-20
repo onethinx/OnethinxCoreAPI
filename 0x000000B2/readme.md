@@ -199,7 +199,7 @@ sleepConfig_t sleepConfig = {
 ```
 sleepConfig_t sleepConfig = {
 	.sleepMode = modeSleep,
-	.sleepCores = coresCM0p,
+	.sleepCores = coresM0p,
 	.wakeUpPin = wakeUpPinUp(false),
 	.wakeUpTime = wakeUpTimeOff
 };
