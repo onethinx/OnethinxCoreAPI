@@ -64,7 +64,7 @@
 
 /* Do not modify. If stack version does not match, implement correct OnethinxCore.h & .c API drivers */
 #define minimumVersion 	0x000000B2
-#define maximumVersion 	0x000000B4
+#define maximumVersion 	0x000000B5
 
 typedef struct arr8b_t  { uint8_t bytes[8];  } arr8b_t;
 typedef struct arr16b_t { uint8_t bytes[16]; } arr16b_t;
@@ -273,8 +273,8 @@ typedef enum __attribute__ ((__packed__)) {
 typedef union {
 	struct
 	{
-		paramErrors_e 			errorStatus 	: 8;  //!< Parameter Errors
-		uint8_t									: 8;  //!< reserved
+		paramErrors_e 			errorStatus 	: 8;	//!< Parameter Errors
+		uint8_t									: 8;	//!< reserved
 	};
 	uint8_t reserved[16];
 } parameterStatus_t;
@@ -282,9 +282,10 @@ typedef union {
 typedef union {
 	struct
 	{
-		radioErrors_e 			errorStatus 	: 8;  //!< Radio Errors
-		uint8_t							 		: 7;  //!< reserved
-		bool 					isBusy			: 1;  //!< Radio is busy?
+		radioErrors_e 			errorStatus 	: 8;	//!< Radio Errors
+		uint8_t							 		: 6;	//!< reserved
+		bool 					isConfigured	: 1;	//!< The Radio is configured? (implemented since Stack version 0x000000B5)
+		bool 					isBusy			: 1;	//!< Radio is busy?
 	};
 	uint8_t reserved[16];
 } radioStatus_t;
