@@ -296,7 +296,7 @@ typedef union {
 		macErrors_e 			errorStatus  	: 8;	//!< MAC Errors
 		uint8_t		 			bytesToRead  	: 8;	//!< Total bytes in Receive buffer
 		uint8_t							 		: 3;	//!< reserved
-		bool 					isConfigured	: 1;	//!< System is configured?
+		bool 					isConfigured	: 1;	//!< The MAC is configured?
 		bool 					messageReceived	: 1;	//!< The MAC received a message
 		bool 					isJoined 		: 1;	//!< Chip mode
 		bool 					isBusy			: 1;	//!< Chip mode
