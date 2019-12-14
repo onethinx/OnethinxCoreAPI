@@ -101,7 +101,7 @@ void CM4_ReleaseCallback(void)
 
 coreStatus_t coreComm(coreFunctions_e function, bool waitTillFinished)
 {
-	systemErrors_e systemError;
+	systemErrors_e systemError = system_OK;
 	cy_en_ipc_pipe_status_t pipeStatus;
 	coreArguments.function = function;
 	if (coreArguments.status.system.isBusy) systemError = system_BusyError;
