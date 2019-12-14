@@ -49,6 +49,7 @@
  * 0x000000B2	Cleared RX-timeout flag if no downlink response is expected, added DevEUI & build info, fixed high power consumption glitches at wakeup, Added LowPowerDebug, Improved active-power consumption
  * 0x000000B3	Fix Join accept on SF12 in RX1 window
  * 0x000000B4	Fix WakeUp pin in Sleepmode, FlashRead fix for row !=0
+ * 0x000000B5	Fix FlashWrites after Sleep
  *
  * Known Issues:
  *   Confirmed downlink message doesn't get confirmation from device
