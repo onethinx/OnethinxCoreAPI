@@ -42,7 +42,6 @@ Sleepmode is slightly updated to accomodate the BLE ECO (32MHz External Crystal 
 ```
 
 *Example: DeepSleep on both cores and wake up after 15 seconds*
-
 ```
 sleepConfig_t sleepConfig = {
 	.sleepMode = modeDeepSleep,	//!< modeSleep, modeDeepSleep or modeHibernate (debug modes are depreciated)
@@ -69,4 +68,9 @@ M4_WaitDeepSleep	//!< M4 goes into DeepSleep while is stack busy
 This variable is needed for the following functions:
 ```
 LoRaWAN_Join(WaitMode_e waitMode);
+LoRaWAN_Send(uint8_t* buffer, uint8_t length, WaitMode_e waitMode);
+```
+*Example: LoRaWAN Join and put M4 in deepsleep while waiting for joined*
+```
+LoRaWAN_Join(M4_WaitDeepSleep);
 ```
