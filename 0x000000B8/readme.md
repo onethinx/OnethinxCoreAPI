@@ -4,7 +4,7 @@
 - Added extended configurations:
    - LoRa<>LoRa functionality
    - Stack debug options
-- Capsense confguration fix
+- Capsense configuration fix
 - Add MAC Cmd LinkADR
 - Fixed RX window timing
 - Fix confirmed downlink reply (ACK)
