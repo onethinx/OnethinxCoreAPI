@@ -5,7 +5,6 @@
    - LoRa<>LoRa functionality
    - Stack debug options
 - Capsense confguration fix
-- Add LoRa<>LoRa functionality
 - Add MAC Cmd LinkADR
 - Fixed RX window timing
 - Fix confirmed downlink reply (ACK)
@@ -56,3 +55,18 @@ sleepConfig_t sleepConfig = {
 ```
 
 **Caution: All members of the sleepConfig structure have to be assigned!**
+
+## Changes to WaitMode of the new 0x000000B8 API
+
+Previous versions of the stack have a boolean flag implemented to select if the M4 will wait for the stack (blocking) or not. This version supports multiple settings for the M4 to wait:
+```
+M4_NoWait		//!< Do not wait till stack finished
+M4_WaitActive		//!< Wait while stack busy, M4 stays in Active mode
+M4_WaitSleep		//!< M4 goes into Sleep while is stack busy
+M4_WaitDeepSleep	//!< M4 goes into DeepSleep while is stack busy
+```
+
+This variable is needed for the following functions:
+```
+LoRaWAN_Join(WaitMode_e waitMode);
+```
