@@ -36,11 +36,11 @@ M0_DeepSleep		//!< Put M0+ in DeepSleep mode during system idle
 ## Changes to the sleep structure of the new 0x000000B8 API
 
 Sleepmode is slightly updated to accomodate the BLE ECO (32MHz External Crystal Oscillator). The following structure members are changed / added:
-
+```
 .sleepMode	//!< Set sleepmode to Sleep, DeepSleep or Hibernate
 .BleEcoON	//!< Leaves BLE ECO ON during sleep. Consumes additional power, enable only when ECO/BLE functionality is needed during sleep
 DebugON		//!< Leaves Debug Port active during idle. Consumes additional power, enable only for debugging purposes
-
+```
 *Example: DeepSleep on both cores and wake up after 15 seconds*
 
 ```
