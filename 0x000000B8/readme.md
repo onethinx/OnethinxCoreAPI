@@ -1,17 +1,17 @@
 ## Updates for the 0x000000B8 Stack
 
-Restructured stack core,
-Added extended configurations:
+- Restructured stack core,
+- Added extended configurations:
   LoRa<>LoRa functionality
   Stack debug options
-Capsense confguration fix
-Add LoRa<>LoRa functionality
-Add MAC Cmd LinkADR
-Fixed RX window timing
-Fix confirmed downlink reply (ACK)
-Fix US join implementation
-Add Low Power Idle/Join
-Stability fixes
+- Capsense confguration fix
+- Add LoRa<>LoRa functionality
+- Add MAC Cmd LinkADR
+- Fixed RX window timing
+- Fix confirmed downlink reply (ACK)
+- Fix US join implementation
+- Add Low Power Idle/Join
+- Stability fixes
 
 ## Changes to the configuration structure of the new 0x000000B8 API
 
@@ -39,7 +39,7 @@ Sleepmode is slightly updated to accomodate the BLE ECO (32MHz External Crystal 
 ```
 .sleepMode	//!< Set sleepmode to Sleep, DeepSleep or Hibernate
 .BleEcoON	//!< Leaves BLE ECO ON during sleep. Consumes additional power, enable only when ECO/BLE functionality is needed during sleep
-DebugON		//!< Leaves Debug Port active during idle. Consumes additional power, enable only for debugging purposes
+.DebugON		//!< Leaves Debug Port active during idle. Consumes additional power, enable only for debugging purposes
 ```
 
 *Example: DeepSleep on both cores and wake up after 15 seconds*
