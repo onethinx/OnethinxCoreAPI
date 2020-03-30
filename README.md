@@ -17,6 +17,9 @@ The following table indicates which API version to use:
 | 0x000000B3    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2 |
 | 0x000000B4    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2 |
 | 0x000000B5    | 0x000000B2  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2 |
+| 0x000000B6    | 0x000000B2  | not public                                                 |
+| 0x000000B7    | 0x000000B7  | not public                                                 |
+| 0x000000B8    | 0x000000B8  | github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8 |
 
 ### How to get the stack version of your module:
 
