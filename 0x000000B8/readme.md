@@ -1,9 +1,9 @@
 ## Updates for the 0x000000B8 Stack
 
-- Restructured stack core,
+- Restructured stack core
 - Added extended configurations:
-  LoRa<>LoRa functionality
-  Stack debug options
+   - LoRa<>LoRa functionality
+   - Stack debug options
 - Capsense confguration fix
 - Add LoRa<>LoRa functionality
 - Add MAC Cmd LinkADR
