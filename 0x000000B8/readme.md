@@ -25,8 +25,8 @@ coreConfiguration_t coreConfig = {
 	.System.Idle.DebugON =  	true,
 };
 ```
-Where '.System.Idle.Mode' has to be one of the following:
 
+Where '.System.Idle.Mode' has to be one of the following:
 ```
 M0_Active		//!< Keep M0+ active during system idle
 M0_Sleep		//!< Put M0+ in Sleep mode during system idle
@@ -41,6 +41,7 @@ Sleepmode is slightly updated to accomodate the BLE ECO (32MHz External Crystal 
 .BleEcoON	//!< Leaves BLE ECO ON during sleep. Consumes additional power, enable only when ECO/BLE functionality is needed during sleep
 DebugON		//!< Leaves Debug Port active during idle. Consumes additional power, enable only for debugging purposes
 ```
+
 *Example: DeepSleep on both cores and wake up after 15 seconds*
 
 ```
