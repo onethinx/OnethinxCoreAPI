@@ -52,9 +52,7 @@
  * 0x000000B5	Fix Flashwrites after sleep
  * 0x000000B7	Restructured stack core, Capsense confguration fix, Add LoRa<>LoRa functionality, Add MAC Cmd LinkADR, Fixed RX window timing, Fix confirmed downlink reply, Fix US join implementation, Add Low Power Join, Stability fixes
  * 0x000000B8	Restructured stack core, added low-power idle/join
- *
- * * Known Issues: 
- *   ADR not working yet
+ * 0x000000B9	Fix ADR
  *
  ********************************************************************************/
 
