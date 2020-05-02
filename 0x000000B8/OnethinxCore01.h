@@ -53,6 +53,7 @@
  * 0x000000B7	Restructured stack core, Capsense confguration fix, Add LoRa<>LoRa functionality, Add MAC Cmd LinkADR, Fixed RX window timing, Fix confirmed downlink reply, Fix US join implementation, Add Low Power Join, Stability fixes
  * 0x000000B8	Restructured stack core, added low-power idle/join
  * 0x000000B9	Fix ADR
+ * 0x000000BA	Unlock functions to use Port 6 & 7 for Capsense and SDW IOs
  *
  ********************************************************************************/
 
@@ -64,7 +65,7 @@
 
 /* Do not modify. If stack version does not match, implement correct OnethinxCore.h & .c API drivers from the Onethinx Github page */
 #define minimumVersion 	0x000000B8
-#define maximumVersion 	0x000000B9
+#define maximumVersion 	0x000000BA
 
 typedef struct arr8b_t  { uint8_t bytes[8];  } arr8b_t;
 typedef struct arr16b_t { uint8_t bytes[16]; } arr16b_t;
