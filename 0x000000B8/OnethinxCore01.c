@@ -111,22 +111,24 @@ coreStatus_t coreComm(coreFunctions_e function, WaitMode_e waitMode)
 		while ((coreArguments.status.system.isSleeping) && ((CPUSS->CM0_STATUS & 3) == 0)) {}															// Check critical state as M0 should be asleep but isn't (yet)
 		pipeStatus = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM0_ADDR, CY_IPC_EP_CYPIPE_CM4_ADDR, (void *) &ipcMsgs.forCM0, CM4_ReleaseCallback);
 		if (pipeStatus != CY_IPC_PIPE_SUCCESS) systemError = system_IPCError;
-		else if (waitMode != M4_NoWait)
+		else
 		{
 			while (!callBackDone) {}															// Wait till IPC call is finalized
-			CyDelay(100);
-			switch (waitMode)
+			if (waitMode != M4_NoWait)
 			{
-				case M4_WaitSleep:
-					Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-					break;
-				case M4_WaitDeepSleep:
-					Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-					break;
-				default:
-					break;
+				switch (waitMode)
+				{
+					case M4_WaitSleep:
+						Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+						break;
+					case M4_WaitDeepSleep:
+						Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+						break;
+					default:
+						break;
+				}
+				while (coreArguments.status.system.isBusy) {}
 			}
-			while (coreArguments.status.system.isBusy) {}
 		}
 	}
 	if (systemError != system_OK) coreArguments.status.system.errorStatus = systemError;
@@ -209,11 +211,13 @@ coreStatus_t LoRaWAN_Sleep(sleepConfig_t * sleepConfig)
 	if (coreArguments.status.system.errorStatus != system_OK) return coreArguments.status;
 	if (sleepConfig->sleepMode == modeHibernate)	
 		while(1);																		// CM0+ will put system in hibernate and system will restart with a reset
- 	while (!callBackDone) {}															// Wait till IPC call is finalized
+ 	//while (!callBackDone) {}															// Wait till IPC call is finalized
 	if (sleepConfig->sleepMode == modeDeepSleep)
-		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);								// Wait till M0+ generates interrupt to wake
 	else if (sleepConfig->sleepMode == modeSleep)
-		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);	
+		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+
+	while (coreArguments.status.system.isBusy) {}										// Wait till M0+ ready
 	return coreArguments.status;
 }
 
@@ -237,7 +241,5 @@ coreStatus_t LoRaWAN_FlashWrite(uint8_t* buffer, uint8_t block, uint8_t length)
 	coreArguments.arg3 = length;
 	return coreComm(coreFunction_LW_flashWrite, M4_WaitActive);
 }
-
-
 
 /* [] END OF FILE */
