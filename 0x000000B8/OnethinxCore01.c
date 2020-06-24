@@ -235,6 +235,7 @@ coreStatus_t LoRaWAN_FlashRead(uint8_t* buffer, uint8_t block, uint8_t length)
 }
 
 // Fix for FlashWrites concerning versions 0xB6 till 0xBA
+// add the compiler option "-DCY_FLASH_RWW_DRV_SUPPORT_DISABLED" in the CMakeLists.txt
 
 // coreStatus_t LoRaWAN_FlashWrite(uint8_t* buffer, uint8_t block, uint8_t length)
 // {
