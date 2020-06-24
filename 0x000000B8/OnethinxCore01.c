@@ -234,12 +234,46 @@ coreStatus_t LoRaWAN_FlashRead(uint8_t* buffer, uint8_t block, uint8_t length)
 	return coreComm(coreFunction_LW_flashRead, M4_WaitActive);
 }
 
+// Fix for FlashWrites concerning versions 0xB6 till 0xBA
+
+// coreStatus_t LoRaWAN_FlashWrite(uint8_t* buffer, uint8_t block, uint8_t length)
+// {
+// 	coreArguments.arg1 = (uint32_t) buffer;
+// 	coreArguments.arg2 = block;
+// 	coreArguments.arg3 = length;
+// 	return coreComm(coreFunction_LW_flashWrite, M4_WaitActive);
+// }
+
+#include "cy_flash.h"
+
+typedef union {
+	struct
+	{
+		uint32_t val32s[128];
+	} val32;
+	struct
+	{
+		uint8_t val8s[512];
+	} val8;
+} flashrow_t;
+
+CY_SECTION(".cy_em_eeprom")
+__USED flashrow_t flashBuffer[4];
+
+
 coreStatus_t LoRaWAN_FlashWrite(uint8_t* buffer, uint8_t block, uint8_t length)
 {
-	coreArguments.arg1 = (uint32_t) buffer;
-	coreArguments.arg2 = block;
-	coreArguments.arg3 = length;
-	return coreComm(coreFunction_LW_flashWrite, M4_WaitActive);
+	CY_ALIGN(4) flashrow_t ramBuffer;
+
+	ramBuffer = flashBuffer[block >> 1];
+	for (uint16_t cnt = 0; cnt < ((length == 0) ? 256 : length); cnt++)
+		ramBuffer.val8.val8s[cnt + ((block & 1) << 8)] = buffer[cnt];
+
+	cy_en_flashdrv_status_t sStatus = Cy_Flash_WriteRow((uint32_t)&flashBuffer[block >> 1], (uint32_t *)&ramBuffer);
+	if (sStatus != CY_FLASH_DRV_SUCCESS)
+		coreArguments.status.system.errorStatus = system_FlashWriteError;
+
+	return coreArguments.status;
 }
 
 /* [] END OF FILE */
