@@ -12,6 +12,10 @@
 - Add Low Power Idle/Join
 - Stability fixes
 
+## Flashwrite fix
+
+Add "-DCY_FLASH_RWW_DRV_SUPPORT_DISABLED" in the CMakeLists.txt
+
 ## Changes to the configuration structure of the new 0x000000B8 API
 
 The Onethinx 0x000000B8 stack has implemented M0+ idle/join-backoff sleepmode. The user has to update the coreConfiguration to accomodate the idle sleepmode.
