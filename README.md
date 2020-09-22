@@ -9,19 +9,19 @@ The following table indicates which API version to use:
 | 0x000000AA    | 0x000000AA  | not public                                                                                       |
 | 0x000000AB    | 0x000000AA  | not public                                                                                       |
 | 0x000000AC    | 0x000000AA  | not public                                                                                       |
-| 0x000000AD    | 0x000000AD  | [Onethinx GitHub CoreAPI 0x000000AD](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000AD) |
-| 0x000000AE    | 0x000000AD  | [Onethinx GitHub CoreAPI 0x000000AD](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000AD) |
-| 0x000000B0    | 0x000000B0  | [Onethinx GitHub CoreAPI 0x000000B0](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B0) |
-| 0x000000B1    | 0x000000B1  | [Onethinx GitHub CoreAPI 0x000000B1](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B1) |
-| 0x000000B2    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B1](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
-| 0x000000B3    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B2](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
-| 0x000000B4    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B2](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
-| 0x000000B5    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B2](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
+| 0x000000AD    | 0x000000AD  | [Onethinx GitHub CoreAPI 0x000000AD](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000AD) |
+| 0x000000AE    | 0x000000AD  | [Onethinx GitHub CoreAPI 0x000000AD](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000AD) |
+| 0x000000B0    | 0x000000B0  | [Onethinx GitHub CoreAPI 0x000000B0](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B0) |
+| 0x000000B1    | 0x000000B1  | [Onethinx GitHub CoreAPI 0x000000B1](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B1) |
+| 0x000000B2    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B1](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
+| 0x000000B3    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B2](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
+| 0x000000B4    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B2](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
+| 0x000000B5    | 0x000000B2  | [Onethinx GitHub CoreAPI 0x000000B2](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B2) |
 | 0x000000B6    | 0x000000B2  | not public                                                                                       |
 | 0x000000B7    | 0x000000B7  | not public                                                                                       |
-| 0x000000B8    | 0x000000B8  | [Onethinx GitHub CoreAPI 0x000000B8](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
-| 0x000000B9    | 0x000000B8  | [Onethinx GitHub CoreAPI 0x000000B8](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
-| 0x000000BB    | 0x000000BB  | [Onethinx GitHub CoreAPI 0x000000BB](github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
+| 0x000000B8    | 0x000000B8  | [Onethinx GitHub CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
+| 0x000000B9    | 0x000000B8  | [Onethinx GitHub CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
+| 0x000000BB    | 0x000000BB  | [Onethinx GitHub CoreAPI 0x000000BB](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
 
 ### How to get the stack version of your module:
 
