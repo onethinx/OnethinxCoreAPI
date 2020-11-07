@@ -55,6 +55,7 @@
  * 0x000000B9	Fix ADR
  * 0x000000BA	Unlock functions to use Port 6 & 7 for Capsense and SDW IOs
  * 0x000000BB	Fix TX timeout setting for EU SF12/125 (payload > 27 bytes), Fix Flashwrites
+ * 0x000000BC	Fix LoRa to LoRa Communication
  *
  ********************************************************************************/
 
@@ -66,7 +67,7 @@
 
 /* Do not modify. If stack version does not match, implement correct OnethinxCore.h & .c API drivers from the Onethinx Github page */
 #define minimumVersion 	0x000000BB
-#define maximumVersion 	0x000000BB
+#define maximumVersion 	0x000000BC
 
 typedef struct arr8b_t  { uint8_t bytes[8];  } arr8b_t;
 typedef struct arr16b_t { uint8_t bytes[16]; } arr16b_t;
