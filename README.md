@@ -22,7 +22,7 @@ The following table indicates which API version to use:
 | 0x000000B8    | 0x000000B8  | [Onethinx GitHub CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
 | 0x000000B9    | 0x000000B8  | [Onethinx GitHub CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
 | 0x000000BA    | 0x000000B8  | [Onethinx GitHub CoreAPI 0x000000B8](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
-| 0x000000BB    | 0x000000BB  | [Onethinx GitHub CoreAPI 0x000000BB](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000B8) |
+| 0x000000BB    | 0x000000BB  | [Onethinx GitHub CoreAPI 0x000000BB](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000BB) |
 
 ### How to get the stack version of your module:
 
