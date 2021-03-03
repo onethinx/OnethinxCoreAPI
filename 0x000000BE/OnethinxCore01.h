@@ -69,7 +69,7 @@
 
 /* Do not modify. If stack version does not match, implement correct OnethinxCore.h & .c API drivers from the Onethinx Github page */
 #define minimumVersion 	0x000000BD
-#define maximumVersion 	0x000000BE
+#define maximumVersion 	0x000000BF
 
 typedef struct arr8b_t  { uint8_t bytes[8];  } arr8b_t;
 typedef struct arr16b_t { uint8_t bytes[16]; } arr16b_t;
