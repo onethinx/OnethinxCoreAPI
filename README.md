@@ -26,6 +26,7 @@ The following table indicates which API version to use:
 | 0x000000BC    | 0x000000BC  | not public
 | 0x000000BD    | 0x000000BD  | not public
 | 0x000000BE    | 0x000000BE  | [Onethinx GitHub CoreAPI 0x000000BE](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000BE) |
+| 0x000000BF    | 0x000000BE  | [Onethinx GitHub CoreAPI 0x000000BE](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000BE) |
 
 ### How to get the stack version of your module:
 
