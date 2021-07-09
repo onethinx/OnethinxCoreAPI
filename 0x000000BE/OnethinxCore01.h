@@ -58,6 +58,7 @@
  * 0x000000BC	Fix LoRa to LoRa Communication
  * 0x000000BD	Added FSK modulation
  * 0x000000BE	Fixed small timing issues, MAC commands, restructured stack etc.
+ * 0x000000BF   Changed RX timing window to SysTick timer (32MHz instead of 32KHz)
  * 
  ********************************************************************************/
 
