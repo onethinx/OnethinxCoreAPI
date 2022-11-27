@@ -253,7 +253,7 @@ typedef union {
 			} Idle;
 		} System;
 		struct  __attribute__ ((__packed__)) {
-			bool					Boost    			: 1;
+			bool					Boost    			: 1;			/**< Increases RX sensitivity at the cost of 0.6mA in receive mode */
 			uint8_t										: 7;
 		} RX;
 	};
