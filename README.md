@@ -30,9 +30,15 @@ The following table indicates which API version to use:
 | 0x000000C0    | 0x000000C0  | not public                                                                                       |
 | 0x000000C1    | 0x000000C1  | [Onethinx GitHub CoreAPI 0x000000C1](https://github.com/onethinx/OnethinxCoreAPI/tree/master/0x000000C1) |
 
-### How to get the stack version of your module:
+### How to get the stack version of your module.
+
+Put the following code in your main.c:
 
 ```
+
+#include "project.h"
+#include "OnethinxCore01.h"
+
 LoRaWAN_keys_t SomeOTAAkeys = {
 	.KeyType					= OTAA_10x_key,
 	.PublicNetwork					= true,
@@ -52,19 +58,25 @@ coreConfiguration_t	coreConfigMain = {
 	.TX.FPort = 			1,
 };
 
-coreStatus_t coreStatus;
 uint32_t stackVersion;
+extern coreStatus_t coreComm(coreFunctions_e function, WaitMode_e waitMode);
+extern ipc_msgs_t ipcMsgs;
+extern void CM4_MessageCallback(uint32_t *msg __attribute__((unused)));
 
 int main(void)
 {
-	CyDelay(1000);
-  
-	/* enable global interrupts */
+  	CyDelay(1000);
 	__enable_irq();
-	
-	coreStatus = LoRaWAN_Init(&coreConfigMain);
-	stackVersion = coreStatus.system.version;       // your stack version will be here
-	CyDelay(1000);
+	Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR, CM4_MessageCallback, CY_IPC_EP_CYPIPE_CM0_ADDR); 
+	ipcMsgs.forCM0.coreArgumentsPtr = &coreArguments;
+	ipcMsgs.fromCM0.coreArgumentsPtr = &coreArguments;
+	coreArguments.configurationPtr = &coreConfigMain;
+	coreArguments.status.system.breakCurrentFunction = true;
+	coreArguments.status.system.isBusy = false;
+	coreComm(coreFunction_Init, M4_NoWait);
+	CyDelay(100);
+	stackVersion = coreArguments.status.system.version;       // your stack version will be here
+	while(1){}
  }
   ```
   
